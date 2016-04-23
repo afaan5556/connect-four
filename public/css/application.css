@@ -46,3 +46,22 @@
   right: 0 !important;
 }
 
+#zone {
+    text-align: center;
+}
+
+#fin {
+    text-align: center;
+}
+#column-1-4{
+ fill: blue;
+}
+#column-2-3{
+ fill: blue;
+}
+#column-3-2{
+ fill: blue;
+}
+#column-4-1{
+ fill: blue;
+}
