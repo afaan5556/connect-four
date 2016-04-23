@@ -1,0 +1,36 @@
+<article class="Post" id="<%=@post.id%>">
+
+    <h1><%= @post.title %></h1>
+
+    <%= @post.body %>
+
+</article>
+
+<div class="answers_list">
+    <% @answers.each do |ans| %>
+    <div class="answer" id="<%= ans.id %>">
+        <%= ans.body %>
+        <br>
+        <% answer = Answer.find(ans.id) %>
+        <% answer.comments.each do |com| %>
+        <div class="comment" id= <%= com.id %>>
+            <%= com.body %>
+        </div>
+        <%end%>
+    </div>
+      <form class="comment_form" action="/comments" method="post">
+        <input type="text" name="body" placeholder="Comment here">
+        <input style="display: none;" type="text" name="commentable_type" value="Answer">
+        <input style="display: none;" name="commentable_id" value="<%= ans.id %>" >
+        <input style="display: none;" name="post_id" value="<%= @post.id %>" >
+        <input type="submit" name="name" value="Comment">
+      </form>
+      <%end%>
+
+      <form class="new_answer" action="/answers" method="post">
+        <label for="">Answer the question bro</label>
+        <input type="text" name="body" value="" placeholder="Get at me breh">
+        <input style="display: none;" name="post_id" value="<%= @post.id %>">
+        <input type="submit" name="name" value="Answer">
+      </form>
+</div>

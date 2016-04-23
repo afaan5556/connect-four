@@ -1,0 +1,78 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+
+<div class="fancy">
+
+<div id="editProfile" class="modal center-sheet">
+    <div class="modal-content">
+      <form action="/users/<%=@user.id%>" method="post">
+        <input type="hidden" name="_method" value="put" />
+        <input type="text" name="account[username]" placeholder="<%= @user.username%>">
+        <input type="text" name="account[email]" placeholder="<%= @user.email%>">
+        <input type="password" name="account[password_digest]" placeholder="*******">
+        <input type="submit" value="Edit Profile">
+      </form>
+    </div>
+</div>
+
+
+
+
+<h5> User Posts </h5>
+<% @user.posts.each do |info| %>
+<b>
+<ol>
+  <li style="list-style-type: none;">
+  <%= info.created_at %>:
+  <br>
+  Post: <a href = "/posts/<%=info.id%>"> <%= info.title %> </a> - </b> <%= info.body %>
+  </li>
+</ol>
+<% end %>
+
+<h5> User Answers </h5>
+<% @user.answers.each do |info| %>
+<b>
+<ol>
+  <li style="list-style-type: none;">
+  <%
+  post_id = info.post_id
+  post = Post.find(post_id)
+  %>
+
+  Answer On ~ <%= info.created_at%>
+  <br>
+  Post: <a href = "/posts/<%=post_id%>"> <%= post.title %></a> - <%= info.body %>
+  </li>
+
+</ol>
+<% end %>
+
+<h5> Comments </h5>
+<% @user.comments.each do |info| %>
+<b>
+<ol>
+<%
+if info.commentable_type == "Answer" || "answer"
+  answer_id = info.commentable_id
+  answer = Answer.find(answer_id)
+  post  = Post.find(answer.post_id)
+else
+  post = Post.find(commentable_id)
+end
+%>
+
+  <li style="list-style-type: none;">
+  Created On ~ <%= info.created_at %>:
+  </b>
+  <br>
+  Post: <a href = "/posts/<%=post.id%>"><%= post.title %></a>
+  <br>
+  Comment On: <%= info.commentable_type %>
+  <br>
+  <%= info.body %>
+  </li>
+</ol>
+<% end %>
+</div>

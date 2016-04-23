@@ -1,0 +1,48 @@
+.box{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.responsive-img{
+  position: absolute;
+  width:2em;
+  height: 2em;
+}
+
+.container{
+  position: absolute;
+  left: 5em;
+}
+
+
+
+.footer-container{
+  position: absolute;
+  bottom: 0em;
+  padding: 0em;
+}
+
+#login{
+  background-color:#ffffcc;
+  top: 30% !important;
+  width: 20%;
+}
+
+#signup{
+  background-color:#ffffcc;
+  top: 30% !important;
+  width: 20%;
+}
+
+#createPost{
+  background-color:#ffffcc;
+  top: 30% !important;
+  width: 30%;
+}
+
+
+.votes{
+  right: 0 !important;
+}
+

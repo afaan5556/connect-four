@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <nav>
+      <% if session[:user_id] %>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">ThotFlow<img alt="rat" class="responsive-img" src="http://cellarratwinetours.com/wp-content/uploads/2014/03/rat-logo-post1.png"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <li><a class="waves-effect waves-light btn modal-trigger" href="#createPost">Create Post</a></li>
+
+          <li><a class="waves-effect waves-light btn modal-trigger" href="/users/<%= session[:user_id]%>">Profile</a></li>
+
+          <li><a class="waves-effect waves-light btn modal-trigger" href="#editProfile">Edit Profile</a></li>
+
+          <li><a class="waves-effect waves-light btn modal-trigger" href="/logout">Logout</a></li>
+
+        </ul>
+      </div>
+      <% else  %>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">ThotFlow<img alt="rat" class="responsive-img" src="http://cellarratwinetours.com/wp-content/uploads/2014/03/rat-logo-post1.png"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn modal-trigger" href="#login">Login</a></li>
+
+          <li><a class="waves-effect waves-light btn modal-trigger" href="#signup">Sign Up</a></li>
+        </ul>
+      </div>
+      <% end  %>
+    </nav>
+
+    <!--
+      normalize.css removes cross-browser differences in defaults, e.g.,
+      differences in how form elements appear between Firefox and IE
+      See: http://necolas.github.com/normalize.css/
+    -->
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script> -->
+
+    <!--
+      application.css is where you put your styles
+    -->
+    <link rel="stylesheet" href="/css/application.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/application.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+
+
+</html>
