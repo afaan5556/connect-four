@@ -1,30 +1,55 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
 
-### Purpose
-The Sinatra Skeleton:
+# [Connect Four](https://en.wikipedia.org/wiki/Connect_Four) Group Project
+![connect_four](https://upload.wikimedia.org/wikipedia/commons/a/ad/Connect_Four.gif)
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
 
-### Quickstart
+## Learning Competencies
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+* Build a fully functional, JavaScript-heavy web application from scratch
+* Use agile development techniques
+* Add CSS to make a fun thing look great
 
-As needed, create models & migrations with the `rake` tasks:
+## Summary
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
+This weekend's group project will be 100% Javascript.
 
-### Contributing
+Good news: you know JavaScript! Or at least you think you do. For this challenge, you're going to be writing a large, JavaScript-heavy codebase. You'll need to keep it organized and readable and tested. And you'll be doing it in teams, using the Agile development process.
 
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
+## Releases
 
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
+### Release 1: Deciding on your project and MVP
 
-Be prepared to give and receive specific, actionable, and kind feedback!
+Here are some **possible** user stories. Feel free to expand or subtract upon them as you see fit.
+
+  - A user can see a board
+  - A user can see a styled board
+  - A user can place a piece into a column
+  - Users place alternating black and red pieces on the board
+  - Users can't place a piece in a filled column
+  - A user can see an animation when they place a piece
+  - Users are notified when they win the game (vertical, horizontal and __diagonal__ win cases)
+  - Users have the option to play against the computer
+  - Users are notified when there is no possible way for either player to win a game
+  - Users and computers have a limited time to move
+  - Users and computers have an aggregate time limit, like in chess
+  - Users can play against each other in the same browser
+  - Users can play against a "smart" computer, that has an algorithm for determining the optimal move.
+  - Users can play against a super "smart" computer, that optimizes its moves by making projections for future moves
+  - A user can play against another user on a different computer, using Firebase.js
+
+
+Before you start coding, decide what your Minimum Viable Product is. What are the features that are absolutely necessary?
+
+***Declare your MVP in your README.md. This should be your first commit.*** As you finish sprints, you should update your README.md
+
+### Release 2: Build it!
+
+It's time to build this thing. Start a repository on GitHub as a part of your cohort's organization and get to work.
+
+Be intentional about your workflow.
+- Who will pair with whom and for how long?
+- What is the groups working agreement? (hours, location, etc)
+- What user stories are you including in MVP?
+- How are you going to do to code review? How do you plan on communicating with each other?
+- How are you going to handle deployment?
+- How will you split the project up so that you aren't constantly overwriting each other's code?
